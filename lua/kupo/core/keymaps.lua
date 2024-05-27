@@ -71,3 +71,8 @@ keymap.set(
 -- Yank to system clipboard
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system-clipboard" })
 keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank to system-clipboard" })
+
+-- ChatGPT commands
+keymap.set("x", "<leader>cc", ":ChatGPT<CR>", { desc = "Open up ChatGPT" })
+keymap.set("n", "<leader>cc", ":ChatGPT<CR>", { desc = "Open up ChatGPT" })
+keymap.set("x", "<leader>ce", ":ChatGPTRun explain_code<CR>", { desc = "Explain code with ChatGPT" })
