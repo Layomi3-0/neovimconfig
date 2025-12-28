@@ -1,4 +1,16 @@
 vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("let g:riv_fold_auto_update=0")
+
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
+})
 
 local opt = vim.opt
 
@@ -24,6 +36,9 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+
+-- conceallevel for obsidian.nvim and other plugins
+opt.conceallevel = 1 -- enable conceal for markdown links, etc.
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
