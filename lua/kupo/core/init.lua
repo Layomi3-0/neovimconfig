@@ -1,2 +1,6 @@
 require("kupo.core.options")
 require("kupo.core.keymaps")
+require("kupo.core.jetski-ui")
+require("kupo.core.jetski-region")
+require("kupo.core.jetski-prompt")
+require("kupo.core.jetski-refine")
